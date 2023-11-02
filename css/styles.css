@@ -842,6 +842,31 @@ Screenshots Intro
 }
 
 /* ==========================================================================
+Loader
+========================================================================== */
+.loader-icon {
+    width: 400px;
+    height: 400px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.footer-nav {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+.footer-contact {
+    display: flex;
+    gap: 30px;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+/* ==========================================================================
 Screenshots
 ========================================================================== */
 .screenshots ul {

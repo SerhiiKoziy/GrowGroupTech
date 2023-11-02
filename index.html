@@ -40,18 +40,32 @@
 		<script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
 		<![endif]-->
 	</head>
+
 	<body>
+	<div id="loader" style="display: block">
+		<img class="loader-icon" src="img/gear-spinner.svg" alt="spinner">
+	</div>
 		<!--[if lt IE 7]>
 		<p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
 		<![endif]-->
 		<!-- open/close -->
+
+	<div id="content" style="display: none;">
 		<header>
 			<section class="hero">
 				<div class="texture-overlay"></div>
 				<div class="container">
 					<div class="row nav-wrapper">
 						<div class="col-md-6 col-sm-6 col-xs-6 text-left">
-							<a href="#"><img src="img/logo.svg" alt="Logo" style="background:none; fill:none; stroke:none"></a>
+
+							<!-- logo/open -->
+							<div style="position: relative">
+								<img src="img/output.png" alt="Logo">
+								<p style="position: absolute; top:100px; left:150px; font-size: 34px; font-weight: 800; color: #00182b">GROW GROUP TECH</p>
+								<p style="position: absolute; top:130px; left:250px; font-size: 24px; font-weight: 400; color: #00182b">web solutions</p>
+							</div>
+							<!-- close -->
+
 						</div>
 						<div class="col-md-6 col-sm-6 col-xs-6 text-right navicon">
 							<p>MENU</p><a id="trigger-overlay" class="nav_slide_button nav-toggle" href="#"><span></span></a>
@@ -70,13 +84,8 @@
 		<section class="video" id="about">
 			<div class="container">
 				<div class="row">
-					<div class="col-md-20 text-center">
-						<div class="col-md-4">
-							<h1 class="footer-logo">
-								<img src="img/logo.jpeg" alt="Footer Logo Blue" width="250" height="180">
-							</h1>
-						</div>
-						<strong class="h3 animated fadeInUp" style="font-weight: 500; font-size: 26px; letter-spacing: 1px; color: #555555">
+					<div style="display: flex; flex-direction: column">
+						<strong class="h3 animated fadeInUp" style="font-weight: 500; font-size: 26px; letter-spacing: 1px; color: #555555; display: flex; text-align: center">
 							In a rapidly evolving digital landscape, having a dependable ally is paramount. At Grow Group Tech, we are more than just a web solutions provider; we are your dedicated partner in your digital journey. With years of experience and a commitment to excellence, we've helped businesses of all sizes and industries thrive online.
 						</strong>
 					</div>
@@ -323,19 +332,28 @@
 
 		<footer>
 			<div class="container">
-				<div class="row">
-					<div class="col-md-3">
-						<h1 class="footer-logo">
-						<img src="img/logo.jpeg" alt="Footer Logo Blue" width="200" height="150">
-						</h1>
+				<div>
+					<!-- logo/open -->
+					<div style="position: relative; display: flex; margin-right: 200px">
+						<img src="img/output.png" alt="Logo" style="position: absolute; top: 0; left: 0">
+						<p style="position: absolute; top:100px; left:150px; font-size: 34px; font-weight: 800; color: #00182b">GROW GROUP TECH</p>
+						<p style="position: absolute; top:130px; left:250px; font-size: 24px; font-weight: 400; color: #00182b">web solutions</p>
 					</div>
-					<div class="col-md-9">
+					<!-- close -->
+					<div class="col-md-12">
 						<ul class="footer-nav">
 							<li><a href="#about">About</a></li>
 							<li><a href="#features">Features</a></li>
 							<li><a href="#screenshots">Screenshots</a></li>
-							<li><a href="mailto:sgrowgrouptech@gmail.com" style="color: #323a45;">sgrowgrouptech@gmail.com</a></li>
 						</ul>
+						<div class="footer-contact">
+							<a href="mailto:sgrowgrouptech@gmail.com">
+								<img src="img/icons/email.svg" alt="email" width="30" height="30" />
+							</a>
+							<a href="https://www.facebook.com/grow.group.tech">
+								<img src="img/icons/facebook.svg" alt="facebook" width="40" height="40">
+							</a>
+						</div>
 					</div>
 				</div>
 			</div>
@@ -351,6 +369,8 @@
 				</ul>
 			</nav>
 		</div>
+	</div>
+
 		<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
 		<script src="js/min/toucheffects-min.js"></script>
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
@@ -363,6 +383,18 @@
 		<script src="js/min/scripts-min.js"></script>
 		<!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
 		<script>
+
+			function hideLoader() {
+				document.getElementById("loader").style.display = "none";
+			}
+
+			function showContent() {
+				document.getElementById("content").style.display = "block";
+				document.body.style.overflow = "visible";
+			}
+
+			setTimeout(hideLoader, 2000);
+			setTimeout(showContent, 2000);
 		(function(b,o,i,l,e,r){b.GoogleAnalyticsObject=l;b[l]||(b[l]=
 		function(){(b[l].q=b[l].q||[]).push(arguments)});b[l].l=+new Date;
 		e=o.createElement(i);r=o.getElementsByTagName(i)[0];
